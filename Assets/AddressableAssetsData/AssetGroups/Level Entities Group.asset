@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Level Entities Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Level Entities Group
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 64179572964a44f0c81acfabbe5a4a0e
+  m_SerializeEntries:
+  - m_GUID: ed11afc150f5a490e9739f0e70e3a912
+    m_Address: RedEnemy
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 31ac33024e66842348cf9676c5816d06
+    m_Address: OrangeEnemy
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7b48ff925429e43d7ad009897c246900
+    m_Address: BoxObstacle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: bf9fea49eaefb44798f1a24471e47851, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: afb2dc603a7844391bc2f4533ab25410, type: 2}
+    - {fileID: 11400000, guid: c1a99740b957a410c807297095738423, type: 2}
