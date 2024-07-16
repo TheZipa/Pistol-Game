@@ -3,25 +3,24 @@ using UnityEngine;
 
 namespace PistolGame.Code.Core.Damage
 {
-    public class ColorDamage : IDamageble
+    public class ColorDamage : Damage
     {
-        private readonly SpriteRenderer _view;
-        private readonly Color _damageColor;
-        private readonly Color _initialColor;
+        [SerializeField] private SpriteRenderer _view;
+        [SerializeField] private Color _damageColor;
+        [SerializeField] private float _fadeDuration;
+        private Color _initialColor;
         private Tween _damageTween;
-        
-        public ColorDamage(SpriteRenderer view, Color damageColor)
+
+        private void Awake()
         {
-            _view = view;
-            _damageColor = damageColor;
             _initialColor = _view.color;
         }
 
-        public void TakeDamage(int damage)
+        public override void TakeDamage(int damage)
         {
             _damageTween?.Kill();
             _view.color = _damageColor;
-            _damageTween = _view.DOColor(_initialColor, 0.75f);
+            _damageTween = _view.DOColor(_initialColor, _fadeDuration);
         }
     }
 }

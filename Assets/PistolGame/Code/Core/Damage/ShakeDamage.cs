@@ -3,20 +3,16 @@ using UnityEngine;
 
 namespace PistolGame.Code.Core.Damage
 {
-    public class ShakeDamage : IDamageble
+    public class ShakeDamage : Damage
     {
-        private readonly Transform _transform;
+        [SerializeField] private float _shakeDuration;
+        [SerializeField] private float _shakeStrength;
         private Tween _shakeTween;
-
-        public ShakeDamage(Transform transform)
-        {
-            _transform = transform;
-        }
         
-        public void TakeDamage(int damage)
+        public override void TakeDamage(int damage)
         {
             _shakeTween?.Kill();
-            _shakeTween = _transform.DOShakePosition(0.5f, 0.25f);
+            _shakeTween = transform.DOShakePosition(_shakeDuration, _shakeStrength);
         }
     }
 }

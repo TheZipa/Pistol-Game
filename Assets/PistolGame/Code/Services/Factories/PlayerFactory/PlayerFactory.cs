@@ -39,7 +39,7 @@ namespace PistolGame.Code.Services.Factories.PlayerFactory
         {
             Player player = await InstantiateAsRegistered<Player>();
             Weapon[] weapons = await _weaponsFactory.CreateWeapons(player.Weapon.WeaponLocation);
-            player.Construct(CreateRigidbodyPlayerMovement(player), weapons);
+            player.Construct(CreatePlayerMovement(player), weapons);
             CreateClosestTargetFinder(player, _spawnedEntitiesProvider
                 .GetEntitiesByLayer(_staticData.PlayerConfiguration.TargetsMask).Keys.ToArray());
             await CreatePlayerCamera(player);
@@ -52,12 +52,12 @@ namespace PistolGame.Code.Services.Factories.PlayerFactory
             playerCamera.Construct(player.transform);
         }
 
-        private PlayerMovement CreateRigidbodyPlayerMovement(Player player)
+        private PlayerMovement CreatePlayerMovement(Player player)
         {
-            RigidbodyMovement rigidbodyMovement = player.gameObject.AddComponent<RigidbodyMovement>();
-            rigidbodyMovement.Construct(player, _entityContainer.GetEntity<IPlayerInput>(),
+            PlayerMovement movement = player.gameObject.AddComponent<PlayerMovement>();
+            movement.Construct(player, _entityContainer.GetEntity<IPlayerInput>(),
                 _staticData.PlayerConfiguration.MovementSpeed);
-            return rigidbodyMovement;
+            return movement;
         }
 
         private void CreateClosestTargetFinder(Player player, Transform[] targets)

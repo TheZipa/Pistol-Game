@@ -1,8 +1,8 @@
 namespace PistolGame.Code.Core.Damage
 {
-    public class NoDamage : IDamageble
+    public class NoDamage : Damage
     {
-        public void TakeDamage(int damage)
+        public override void TakeDamage(int damage)
         {
         }
     }

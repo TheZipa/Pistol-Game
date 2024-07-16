@@ -23,6 +23,7 @@ namespace PistolGame.Code.Services.Factories.LevelEntityFactory
 
         public async UniTask WarmUp()
         {
+            _spawnedEntitiesProvider.Clear();
             foreach (string entityPrefab in _staticData.LevelSpawnConfiguration.PrefabsPool) 
                 await _assets.Load<GameObject>(entityPrefab);
         }

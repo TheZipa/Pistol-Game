@@ -23,5 +23,7 @@ namespace PistolGame.Code.Services.SpawnedEntitiesProvider
             _spawnedEntities
                 .Where(s => ((1 << s.Value.gameObject.layer) & layerMask) != 0)
                 .ToDictionary(t => t.Key, e => e.Value);
+
+        public void Clear() => _spawnedEntities.Clear();
     }
 }

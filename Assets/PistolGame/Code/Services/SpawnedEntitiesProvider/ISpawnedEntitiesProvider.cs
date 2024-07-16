@@ -9,5 +9,6 @@ namespace PistolGame.Code.Services.SpawnedEntitiesProvider
         void RegisteredSpawnedEntity(LevelEntity entity);
         T GetEntityFromTransform<T>(Transform entityTransform) where T : class;
         Dictionary<Transform, LevelEntity> GetEntitiesByLayer(LayerMask layerMask);
+        void Clear();
     }
 }

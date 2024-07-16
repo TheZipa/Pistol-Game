@@ -1,4 +1,4 @@
-using PistolGame.Code.Core.Damage;
+using PistolGame.Code.Core.LevelEntities;
 using PistolGame.Code.Core.Player.Weapons.Bullets;
 using PistolGame.Code.Data.StaticData.Weapons;
 using PistolGame.Code.Services.SpawnedEntitiesProvider;
@@ -50,8 +50,8 @@ namespace PistolGame.Code.Core.Player.Weapons
 
         private void ApplyHit(Transform hitEntity)
         {
-            IDamageble damageble = _spawnedEntitiesProvider.GetEntityFromTransform<IDamageble>(hitEntity);
-            damageble?.TakeDamage(_weaponData.Damage);
+            LevelEntity levelEntity = _spawnedEntitiesProvider.GetEntityFromTransform<LevelEntity>(hitEntity);
+            levelEntity.TakeDamage(_weaponData.Damage);
         }
 
         private void ReturnBulletToPool(WeaponBullet bullet)

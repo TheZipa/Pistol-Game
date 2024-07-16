@@ -1,12 +1,11 @@
-using PistolGame.Code.Core.Damage;
 using UnityEngine;
 
 namespace PistolGame.Code.Core.LevelEntities
 {
-    public abstract class LevelEntity : MonoBehaviour, IDamageble
+    public abstract class LevelEntity : MonoBehaviour
     {
         [SerializeField] protected Collider2D _collider;
-        protected IDamageble _damageBehaviour;
+        [SerializeField] protected Damage.Damage _damageBehaviour;
 
         public abstract void Construct();
 

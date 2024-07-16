@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1145109806712309694}
   - component: {fileID: 171721443139731297}
   - component: {fileID: 6848834606615135265}
+  - component: {fileID: 2952070834396918111}
   m_Layer: 6
   m_Name: OrangeEnemy
   m_TagString: Untagged
@@ -99,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _collider: {fileID: 6848834606615135265}
+  _damageBehaviour: {fileID: 2952070834396918111}
   _view: {fileID: 1145109806712309694}
 --- !u!61 &6848834606615135265
 BoxCollider2D:
@@ -126,3 +128,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &2952070834396918111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5320580078733632691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 003a5af548b84b2e92f3885aeb2d6a1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
